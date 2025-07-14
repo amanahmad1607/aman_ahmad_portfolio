@@ -1,0 +1,92 @@
+[
+  {
+  "name": "Automated Poll Generator",
+  "desc": "Video transcriptor and summarizer app using MERN stack. Utilizes Gemini AI to automatically generate polls from transcripts every 5 minutes.",
+  "image": "autopoll.jpg",
+  "category": "mern",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Portfolio Website",
+    "desc": "Personal Portfolio Website. Don't Need Much Info About It, Just Scroll Down. You're Here Only!",
+    "image": "port.png",
+    "category": "basicweb",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Bhopal Metro Project",
+    "desc": " Designedametrorouteplanner using Dijkstra’s algorithm to calculate stations between stops, optimizing accuracy and travel efficiency.",
+    "image": "bhopalmetro.png",
+    "category": "lamp",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "MultiLex",
+    "desc": "Developed a web-based platform for finding alternatives to given words using PHP for server-side logic. Made with HTML, CSS, JavaScript and backend with PHP.",
+    "image": "multilex.png",
+    "category": "basicweb",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Engify.in",
+    "desc": "Developed an online shopping website with virtual try-on feature using JavaScript, HTML and CSS.",
+    "image": "engify.png",
+    "category": "basicweb",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "EngineerSoch.com",
+    "desc": "Nurturing the next generation of engineers through mentorship, career guidance, and immersive learning experiences.",
+    "image": "engineersoch.png",
+    "category": "basicweb",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Video Summarizer",
+    "desc": "Developed a full-stack web application to transcribe and summarize videos using OpenAI’s Whisper for speech-to text conversion.",
+    "image": "videosum.png",
+    "category": "mern",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "LAN-based Chat Application",
+    "desc": "Utilized Java Socket programming for network communication and Spring Boot for managing backend services.",
+    "image": "chat.png",
+    "category": "lamp",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Speech Completion Meter",
+    "desc": " Developed a system to estimate the progress of a speech using cumulative named entity recognition and logarithmic curve fitting.",
+    "image": "speech.png",
+    "category": "mern",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  }
+]
