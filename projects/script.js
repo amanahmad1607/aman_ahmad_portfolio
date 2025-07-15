@@ -1,3 +1,4 @@
+console.log("Script started"); 
 document.addEventListener("DOMContentLoaded", function () {
     // jQuery menu toggle
     $('#menu').click(function () {
