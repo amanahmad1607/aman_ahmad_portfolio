@@ -33,11 +33,15 @@ document.addEventListener('visibilitychange',
 // fetch projects start
 function getProjects() {
     return fetch("projects.json")
-        .then(response => response.json())
-        .then(data => {
-            return data
-        });
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Failed to load projects.json");
+            }
+            return response.json();
+        })
+        .catch(error => console.error(error));
 }
+
 
 
 function showProjects(projects) {
