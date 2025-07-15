@@ -32,7 +32,7 @@ document.addEventListener('visibilitychange',
 
 // fetch projects start
 function getProjects() {
-    return fetch("projects.json")
+    return fetch("/projects.json")
         .then(response => {
             if (!response.ok) {
                 throw new Error("Failed to load projects.json");
