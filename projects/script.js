@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     $('#menu').click(function () {
         $(this).toggleClass('fa-times');
         $('.navbar').toggleClass('nav-toggle');
@@ -17,33 +16,85 @@ $(document).ready(function () {
     });
 });
 
-document.addEventListener('visibilitychange',
-    function () {
-        if (document.visibilityState === "visible") {
-            document.title = "Projects | Portfolio Aman Ahmad";
-            $("#favicon").attr("href", "/assets/images/favicon.png");
-        }
-        else {
-            document.title = "Come Back To Portfolio";
-            $("#favicon").attr("href", "/assets/images/favhand.png");
-        }
-    });
+document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === "visible") {
+        document.title = "Projects | Portfolio Aman Ahmad";
+        $("#favicon").attr("href", "/assets/images/favicon.png");
+    }
+    else {
+        document.title = "Come Back To Portfolio";
+        $("#favicon").attr("href", "/assets/images/favhand.png");
+    }
+});
 
+// 👇 Embedded project data here directly
+const projectData = [
+  {
+    "name": "Automated Poll Generator",
+    "desc": "Video transcriptor and summarizer app using MERN stack. Utilizes Gemini AI to automatically generate polls from transcripts every 5 minutes.",
+    "image": "autopoll.jpg",
+    "category": "mern",
+    "links": { "view": "#", "code": "#" }
+  },
+  {
+    "name": "Portfolio Website",
+    "desc": "Personal Portfolio Website. Don't Need Much Info About It, Just Scroll Down. You're Here Only!",
+    "image": "port.png",
+    "category": "basicweb",
+    "links": { "view": "#", "code": "#" }
+  },
+  {
+    "name": "Bhopal Metro Project",
+    "desc": " Designedametrorouteplanner using Dijkstra’s algorithm to calculate stations between stops, optimizing accuracy and travel efficiency.",
+    "image": "bhopalmetro.png",
+    "category": "lamp",
+    "links": { "view": "#", "code": "#" }
+  },
+  {
+    "name": "MultiLex",
+    "desc": "Developed a web-based platform for finding alternatives to given words using PHP for server-side logic. Made with HTML, CSS, JavaScript and backend with PHP.",
+    "image": "multilex.png",
+    "category": "basicweb",
+    "links": { "view": "#", "code": "#" }
+  },
+  {
+    "name": "Engify.in",
+    "desc": "Developed an online shopping website with virtual try-on feature using JavaScript, HTML and CSS.",
+    "image": "engify.png",
+    "category": "basicweb",
+    "links": { "view": "#", "code": "#" }
+  },
+  {
+    "name": "EngineerSoch.com",
+    "desc": "Nurturing the next generation of engineers through mentorship, career guidance, and immersive learning experiences.",
+    "image": "engineersoch.png",
+    "category": "basicweb",
+    "links": { "view": "#", "code": "#" }
+  },
+  {
+    "name": "Video Summarizer",
+    "desc": "Developed a full-stack web application to transcribe and summarize videos using OpenAI’s Whisper for speech-to text conversion.",
+    "image": "videosum.png",
+    "category": "mern",
+    "links": { "view": "#", "code": "#" }
+  },
+  {
+    "name": "LAN-based Chat Application",
+    "desc": "Utilized Java Socket programming for network communication and Spring Boot for managing backend services.",
+    "image": "chat.png",
+    "category": "lamp",
+    "links": { "view": "#", "code": "#" }
+  },
+  {
+    "name": "Speech Completion Meter",
+    "desc": " Developed a system to estimate the progress of a speech using cumulative named entity recognition and logarithmic curve fitting.",
+    "image": "speech.png",
+    "category": "mern",
+    "links": { "view": "#", "code": "#" }
+  }
+];
 
-// fetch projects start
-function getProjects() {
-    return fetch("/projects.json")
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Failed to load projects.json");
-            }
-            return response.json();
-        })
-        .catch(error => console.error(error));
-}
-
-
-
+// 👇 Render projects using data above
 function showProjects(projects) {
     let projectsContainer = document.querySelector(".work .box-container");
     let projectsHTML = "";
@@ -69,24 +120,7 @@ function showProjects(projects) {
     });
     projectsContainer.innerHTML = projectsHTML;
 
-    // vanilla tilt.js
-    // VanillaTilt.init(document.querySelectorAll(".tilt"), {
-    //     max: 20,
-    // });
-    // // vanilla tilt.js  
-
-    // /* ===== SCROLL REVEAL ANIMATION ===== */
-    // const srtop = ScrollReveal({
-    //     origin: 'bottom',
-    //     distance: '80px',
-    //     duration: 1000,
-    //     reset: true
-    // });
-
-    // /* SCROLL PROJECTS */
-    // srtop.reveal('.work .box', { interval: 200 });
-
-    // isotope filter products
+    // isotope filter
     var $grid = $('.box-container').isotope({
         itemSelector: '.grid-item',
         layoutMode: 'fitRows',
@@ -95,7 +129,6 @@ function showProjects(projects) {
         }
     });
 
-    // filter items on button click
     $('.button-group').on('click', 'button', function () {
         $('.button-group').find('.is-checked').removeClass('is-checked');
         $(this).addClass('is-checked');
@@ -104,12 +137,9 @@ function showProjects(projects) {
     });
 }
 
-getProjects().then(data => {
-    showProjects(data);
-})
-// fetch projects end
+showProjects(projectData); // 👈 call directly
 
-// Start of Tawk.to Live Chat
+// Tawk.to Live Chat
 var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
 (function () {
     var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
@@ -119,23 +149,10 @@ var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
     s1.setAttribute('crossorigin', '*');
     s0.parentNode.insertBefore(s1, s0);
 })();
-// End of Tawk.to Live Chat
 
-// disable developer mode
+// Disable dev tools
 document.onkeydown = function (e) {
-    if (e.keyCode == 123) {
-        return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-        return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
-        return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-        return false;
-    }
-    if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+    if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && ['I','C','J'].includes(String.fromCharCode(e.keyCode))) || (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0))) {
         return false;
     }
 }
